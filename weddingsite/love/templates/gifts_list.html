@@ -1,0 +1,33 @@
+{% extends "base.html"%}
+
+{% block content %}
+<style>
+table, td, td {
+  border:1px solid black;
+}
+</style>
+<h1>Lista Prezentów</h1>
+<h5><a href={% url "homepage" %}>Strona Główna</a> </h5>
+{% if user.is_superuser %}
+<h5><a href={% url "gifts-add" %}>Dodaj kolejny prezent</a></h5>
+{% endif %}
+    <table>
+    <tr>
+        <td><b>L.P.</b></td>
+        <td><b>Nazwa prezentu</b></td>
+        <td><b></b></td>
+    </tr>
+    {% for gift in gifts_list %}
+        <tr>
+            <td>{{ page_obj.start_index|add:forloop.counter0 }}.</td>
+            <td>{{ gift.name }}</td>
+            <td>
+                {% if user.is_superuser %}
+                <a href={% url "gifts-update" gift.id %}>update</a>
+                <a href={% url "gifts-delete" gift.id %}>delete</a>
+                {% endif %}
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,666 @@
+{% load static %}
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Wedding Barbara and Jakub</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FREEHTML5.CO" />
+
+  <!-- 
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE 
+	DESIGNED & DEVELOPED by FREEHTML5.CO
+		
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+	<!-- Modernizr JS -->
+	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+		
+	<div class="fh5co-loader"></div>
+	
+	<div id="page">
+	<nav class="fh5co-nav" role="navigation">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-2">
+					<div id="fh5co-logo"><a href="{% url 'homepage' %}">Witaj</a></div>
+				</div>
+				<div class="col-xs-10 text-right menu-1">
+					<ul>
+						{% if user.is_authenticated %}
+						<li class="active"><a href="{% url 'logout' %}">Wyloguj</a></li>
+						<li class="active"><a href="{% url 'confirmation-update' %}">Potwierdzenie przybycia</a></li>
+						<li class="active"><a href="{% url 'preferences-update' %}">Preferencje żywieniowe</a></li>
+						<li class="active"><a href="{% url 'bus-update' %}">Transport</a></li>
+						{% comment %} <li><a href="#">Nasza historia</a></li> {% endcomment %}
+						{% comment %} <li class="has-dropdown">
+							<a href="#">Services</a>
+							<ul class="dropdown">
+								<li><a href="#">Web Design</a></li>
+								<li><a href="#">eCommerce</a></li>
+								<li><a href="#">Branding</a></li>
+								<li><a href="#">API</a></li>
+							</ul>
+						</li>
+						<li class="has-dropdown">
+							<a href="#">Galeria</a>
+							<ul class="dropdown">
+								<li><a href="#">HTML5</a></li>
+								<li><a href="#">CSS3</a></li>
+								<li><a href="#">Sass</a></li>
+								<li><a href="#">jQuery</a></li>
+							</ul> {% endcomment %}
+						{% comment %} <li><a href="#">Kontakt</a></li> {% endcomment %}
+						{% else %}
+						<li class="active"><a href="{% url 'login' %}">Zaloguj</a></li>
+						{% comment %} <li><a href="#">Kontakt</a></li> {% endcomment %}
+						{% endif %}
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+	</nav>
+
+	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url('{% static 'images/zdjecie.png' %}');" data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center">
+					<div class="display-t">
+						<div class="display-tc animate-box" data-animate-effect="fadeIn">
+							<h1>Barbara &amp; Jakub</h1>
+							<h2>Pobieramy się za:</h2>
+							<div class="simply-countdown simply-countdown-one"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div id="fh5co-couple">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+					<h2>Hej !</h2>
+					<h3>26 Sierpnia, 2023 Białystok</h3>
+					<p>Zapraszamy Was do wspólnej celebracji tego szczególnego dla nas dnia.</p>
+				</div>
+			</div>
+			<div class="couple-wrap animate-box">
+				<div class="couple-half">
+					<div class="groom">
+						<img src="{% static 'images/jakub.jpg' %}" alt="groom" class="img-responsive">
+					</div>
+					<div class="desc-groom">
+						<h3>Jakub Samul</h3>
+						<p></p>
+					</div>
+				</div>
+				<p class="heart text-center"><i class="icon-heart2"></i></p>
+				<div class="couple-half">
+					<div class="bride">
+						<img src="{% static 'images/basia.jpg' %}" alt="groom" class="img-responsive">
+					</div>
+					<div class="desc-bride">
+						<h3>Barbara Surmacz</h3>
+						<p></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="fh5co-event" class="fh5co-bg" src="{% static 'images/trio.jpg' %}">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+					<span></span>
+					<h2>Nasze Wesele</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="display-t">
+					<div class="display-tc">
+						<div class="col-md-10 col-md-offset-1">
+							<div class="col-md-6 col-sm-6 text-center">
+								<div class="event-wrap animate-box">
+									<h3>Ślub</h3>
+									<div class="event-col">
+										<i class="icon-clock"></i>
+										<span>17:00</span>
+										<span>18:00</span>
+									</div>
+									<div class="event-col">
+										<i class="icon-calendar"></i>
+										<span>Sobota 26</span>
+										<span>Sierpień, 2023</span>
+									</div>
+									<p></p>
+								</div>
+							</div>
+							<div class="col-md-6 col-sm-6 text-center">
+								<div class="event-wrap animate-box">
+									<h3>Wesele</h3>
+									<div class="event-col">
+										<i class="icon-clock"></i>
+										<span>18:00</span>
+										<span>4:00</span>
+									</div>
+									<div class="event-col">
+										<i class="icon-calendar"></i>
+										<span>Sobota 26</span>
+										<span>Sierpień, 2023</span>
+									</div>
+									<p></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="fh5co-couple-story">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+					<span>Jesteśmy Zakochani</span>
+					<h2>Nasza Historia</h2>
+					<p></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 col-md-offset-0">
+					<ul class="timeline animate-box">
+						<li class="animate-box">
+							<div class="timeline-badge" style="background-image:url('{% static 'images/pierwszespotkanie.jpg' %}');"></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h3 class="timeline-title">Luty 2021 Pierwsze Spotkanie</h3>
+									<span class="date"></span>
+								</div>
+								<div class="timeline-body">
+									<p></p>
+								</div>
+							</div>
+						</li>
+						<li class="timeline-inverted animate-box">
+							<div class="timeline-badge" style="background-image:url('{% static 'images/wspolne.jpg' %}');"></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h3 class="timeline-title">Kwiecień 2021 W Związku</h3>
+									<span class="date"></span>
+								</div>
+								<div class="timeline-body">
+									<p></p>
+								</div>
+							</div>
+						</li>
+						<li class="animate-box">
+							<div class="timeline-badge" style="background-image:url('{% static 'images/pierscionek.jpg' %}');"></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h3 class="timeline-title">24 kwietnia 2022 Zręczyny</h3>
+									<span class="date"></span>
+								</div>
+								<div class="timeline-body">
+									<p></p>
+								</div>
+							</div>
+						</li>
+			    	</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="fh5co-gallery" class="fh5co-section-gray">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+					<span>Nasze Wspomnienia</span>
+					<h2>Ślubna Galeria</h2>
+					<p></p>
+				</div>
+			</div>
+			<div class="row row-bottom-padded-md">
+				<div class="col-md-12">
+					<ul id="fh5co-gallery-list">
+						
+					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url('{% static 'images/zareczyny.jpg' %}'); "> 
+						<a href="{% static 'images/zareczyny.jpg' %}">
+							<div class="case-studies-summary">
+								<span>Photos</span>
+								<h2>Zaręczyny</h2>
+							</div>
+						</a>
+					</li>
+					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url('{% static 'images/sesja1.jpg' %}'); ">
+						<a href="{% static 'images/sesja1.jpg' %}">
+							<div class="case-studies-summary">
+								<span>Photos</span>
+								<h2>Sesja narzeczeńska</h2>
+							</div>
+						</a>
+					</li>
+
+
+					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url('{% static 'images/sesja2.jpg' %}'); ">
+						<a href="{% static 'images/sesja2.jpg' %}" class="color-3">
+							<div class="case-studies-summary">
+								<span>Photos</span>
+								<h2>Sesja narzeczeńska</h2>
+							</div>
+						</a>
+					</li>
+					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url('{% static 'images/sesja3.jpg' %}'); ">
+						<a href="{% static 'images/sesja3.jpg' %}" class="color-4">
+							<div class="case-studies-summary">
+								<span>Photos</span>
+								<h2>Sesja narzeczeńska</h2>
+							</div>
+						</a>
+					</li>
+
+						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url('{% static 'images/sesja4.jpg' %}'); ">
+							<a href="{% static 'images/sesja4.jpg' %}" class="color-3">
+								<div class="case-studies-summary">
+									<span>Photos</span>
+									<h2>Sesja narzeczeńska</h2>
+								</div>
+							</a>
+						</li>
+						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url('{% static 'images/sesja5.jpg' %}'); ">
+							<a href="{% static 'images/sesja5.jpg' %}" class="color-4">
+								<div class="case-studies-summary">
+									<span>Photos</span>
+									<h2>Sesja narzeczeńska</h2>
+								</div>
+							</a>
+						</li>
+
+						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url('{% static 'images/sesja6.jpg' %}'); ">
+							<a href="{% static 'images/sesja6.jpg' %}" class="color-4">
+								<div class="case-studies-summary">
+									<span>Photos</span>
+									<h2>Sesja narzeczeńska</h2>
+								</div>
+							</a>
+						</li>
+
+						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url('{% static 'images/sesja7.jpg' %}'); "> 
+							<a href="{% static 'images/sesja7.jpg' %}" class="color-5">
+								<div class="case-studies-summary">
+									<span>Photos</span>
+									<h2>Sesja narzeczeńska</h2>
+								</div>
+							</a>
+						</li>
+						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url('{% static 'images/sesja8.jpg' %}'); ">
+							<a href="{% static 'images/sesja8.jpg' %}" class="color-6">
+								<div class="case-studies-summary">
+									<span>Photos</span>
+									<h2>Sesja narzeczeńska</h2>
+								</div>
+							</a>
+						</li>
+
+						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url('{% static 'images/plener1.jpg' %}'); ">
+							<a href="{% static 'images/plener1.jpg' %}" class="color-6">
+								<div class="case-studies-summary">
+									<span>Photos</span>
+									<h2>Sesja plenerowa</h2>
+								</div>
+							</a>
+						</li>
+						
+						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url('{% static 'images/plener2.jpg' %}'); ">
+							<a href="{% static 'images/plener2.jpg' %}" class="color-6">
+								<div class="case-studies-summary">
+									<span>Photos</span>
+									<h2>Sesja plenerowa</h2>
+								</div>
+							</a>
+						</li>
+
+						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url('{% static 'images/plener3.jpg' %}'); ">
+							<a href="{% static 'images/plener3.jpg' %}" class="color-6">
+								<div class="case-studies-summary">
+									<span>Photos</span>
+									<h2>Sesja plenerowa</h2>
+								</div>
+							</a>
+						</li>
+
+						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url('{% static 'images/plener4.jpg' %}'); ">
+							<a href="{% static 'images/plener4.jpg' %}" class="color-6">
+								<div class="case-studies-summary">
+									<span>Photos</span>
+									<h2>Sesja plenerowa</h2>
+								</div>
+							</a>
+						</li>
+
+						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url('{% static 'images/plener5.jpg' %}'); ">
+							<a href="{% static 'images/plener5.jpg' %}" class="color-6">
+								<div class="case-studies-summary">
+									<span>Photos</span>
+									<h2>Sesja plenerowa</h2>
+								</div>
+							</a>
+						</li>
+
+						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url('{% static 'images/plener6.jpg' %}'); ">
+							<a href="{% static 'images/plener6.jpg' %}" class="color-6">
+								<div class="case-studies-summary">
+									<span>Photos</span>
+									<h2>Sesja plenerowa</h2>
+								</div>
+							</a>
+						</li>
+
+						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url('{% static 'images/plener7.jpg' %}'); ">
+							<a href="{% static 'images/plener7.jpg' %}" class="color-6">
+								<div class="case-studies-summary">
+									<span>Photos</span>
+									<h2>Sesja plenerowa</h2>
+								</div>
+							</a>
+						</li>
+
+						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url('{% static 'images/plener8.jpg' %}'); ">
+							<a href="{% static 'images/plener8.jpg' %}" class="color-6">
+								<div class="case-studies-summary">
+									<span>Photos</span>
+									<h2>Sesja plenerowa</h2>
+								</div>
+							</a>
+						</li>
+
+					</ul>		
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="fh5co-counter" class="fh5co-bg fh5co-counter" style="background-image:url('{% static 'images/zdjecie.png' %}');">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="display-t">
+					<div class="display-tc">
+						<div class="col-md-3 col-sm-6 animate-box">
+							<div class="feature-center">
+								<span class="icon">
+									<i class="icon-users"></i>
+								</span>
+
+								<span class="counter js-counter" data-from="0" data-to="150" data-speed="5000" data-refresh-interval="50">1</span>
+								<span class="counter-label">Szacowana ilość osób</span>
+
+							</div>
+						{% comment %} </div>
+						<div class="col-md-3 col-sm-6 animate-box">
+							<div class="feature-center">
+								<span class="icon">
+									<i class="icon-user"></i>
+								</span>
+
+								<span class="counter js-counter" data-from="0" data-to="1000" data-speed="5000" data-refresh-interval="50">1</span>
+								<span class="counter-label">We Catter</span>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6 animate-box">
+							<div class="feature-center">
+								<span class="icon">
+									<i class="icon-calendar"></i>
+								</span>
+								<span class="counter js-counter" data-from="0" data-to="402" data-speed="5000" data-refresh-interval="50">1</span>
+								<span class="counter-label">Events Done</span>
+							</div>
+						</div> 
+						<div class="col-md-3 col-sm-6 animate-box">
+							<div class="feature-center">
+								<span class="icon">
+									<i class="icon-clock"></i>
+								</span>
+
+								<span class="counter js-counter" data-from="0" data-to="2345" data-speed="5000" data-refresh-interval="50">1</span>
+								<span class="counter-label">Hours Spent</span>
+
+							</div> {% endcomment %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{% comment %} <div id="fh5co-services" class="fh5co-section-gray">
+		<div class="container">
+			
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>Przygotowane atrakcje</h2>
+					<p>xyz</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
+						<span class="icon">
+							<i class="icon-calendar"></i>
+						</span>
+						<div class="feature-copy">
+							<h3>We Organized Events</h3>
+							<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+						</div>
+					</div>
+
+					<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
+						<span class="icon">
+							<i class="icon-image"></i>
+						</span>
+						<div class="feature-copy">
+							<h3>Photoshoot</h3>
+							<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+						</div>
+					</div>
+
+					<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
+						<span class="icon">
+							<i class="icon-video"></i>
+						</span>
+						<div class="feature-copy">
+							<h3>Video Editing</h3>
+							<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="col-md-6 animate-box">
+					<div class="fh5co-video fh5co-bg" style="background-image: url('{% static 'images/zdjecie.png' %}'); ">
+						<a href="https://vimeo.com/channels/staffpicks/93951774" class="popup-vimeo"><i class="icon-video2"></i></a>
+						<div class="overlay"></div>
+					</div>
+				</div>
+			</div>
+
+			
+		</div>
+	</div> {% endcomment %}
+
+
+	{% comment %} <div id="fh5co-started" class="fh5co-bg" style="background-image:url('{% static 'images/zdjecie.png' %}');">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>Are You Attending?</h2>
+					<p>Please Fill-up the form to notify you that you're attending. Thanks.</p>
+				</div>
+			</div>
+			<div class="row animate-box">
+				<div class="col-md-10 col-md-offset-1">
+					<form class="form-inline">
+						<div class="col-md-4 col-sm-4">
+							<div class="form-group">
+								<label for="name" class="sr-only">Name</label>
+								<input type="name" class="form-control" id="name" placeholder="Name">
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-4">
+							<div class="form-group">
+								<label for="email" class="sr-only">Email</label>
+								<input type="email" class="form-control" id="email" placeholder="Email">
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-4">
+							<button type="submit" class="btn btn-default btn-block">I am Attending</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+ {% endcomment %}
+	<footer id="fh5co-footer" role="contentinfo">
+		<div class="container">
+
+			<div class="row copyright">
+				<div class="col-md-12 text-center">
+					<p>
+						<h2 class="block">Kontakt</h2> 
+					</p>
+					<p>
+						<ul class="fh5co-social-icons">
+							<h3><b>Jakub</b></h3>
+							<h3>516121693</h3>
+							<li><a href="https://www.instagram.com/samuljakub/"><i class="icon-instagram"></i></a></li>
+							<li><a href="https://www.facebook.com/jakub.samul/"><i class="icon-facebook"></i></a></li>
+						</ul>
+						<ul class="fh5co-social-icons">
+							<h3></h3>
+							<h3><b>Barbara</b></h3>
+							<h3>664340692</h3>
+							<li><a href="https://www.instagram.com/andromeda_red_head/"><i class="icon-instagram"></i></a></li>
+							<li><a href="https://www.facebook.com/basia.surmacz.9?comment_id=Y29tbWVudDo1OTkyMDU0MzI3NTUzNTc5XzcyOTEwMTg2ODkzMDIwOQ%3D%3D"><i class="icon-facebook"></i></a></li>
+						</ul>
+					</p>
+				</div>
+			</div>
+
+		</div>
+	</footer>
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+	
+	<!-- jQuery -->
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<!-- jQuery Easing -->
+	<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+	<!-- Bootstrap -->
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<!-- Waypoints -->
+	<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+	<!-- Carousel -->
+	<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+	<!-- countTo -->
+	<script src="{% static 'js/jquery.countTo.js' %}"></script>
+
+	<!-- Stellar -->
+	<script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+	<!-- Magnific Popup -->
+	<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+	<script src="{% static 'js/magnific-popup-options.js' %}"></script>
+
+	<!-- // <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script> -->
+	<script src="{% static 'js/simplyCountdown.js' %}"></script>
+	<!-- Main -->
+	<script src="{% static 'js/main.js' %}"></script>
+
+	<script>
+    var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
+
+    // default example
+    simplyCountdown('.simply-countdown-one', {
+        year: 2023,
+        month: 8,
+        day: 26,
+		hours: 19,
+    });
+
+    //jQuery example
+    $('#simply-countdown-losange').simplyCountdown({
+        year: d.getFullYear(),
+        month: d.getMonth() + 1,
+        day: d.getDate(),
+        enableUtc: false
+    });
+</script>
+
+	</body>
+</html>
+
